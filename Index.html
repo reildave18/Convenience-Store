@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Arial, sans-serif;
+        background: radial-gradient(circle at top, #0f2027, #203a43, #2c5364);
+        color: white;
+    }
+
+    .card {
+        width: 320px;
+        padding: 30px;
+        border-radius: 20px;
+        background: rgba(0,0,0,0.6);
+        box-shadow: 0 0 20px rgba(0,255,200,0.3);
+        text-align: center;
+    }
+
+    h2 {
+        margin-bottom: 20px;
+        color: #00ffd5;
+    }
+
+    .input-box {
+        position: relative;
+        margin: 20px 0;
+    }
+
+    .input-box input {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-bottom: 2px solid #555;
+        background: transparent;
+        color: white;
+        outline: none;
+        transition: 0.3s;
+    }
+
+    .input-box label {
+        position: absolute;
+        top: 50%;
+        left: 5px;
+        transform: translateY(-50%);
+        font-size: 14px;
+        color: #aaa;
+        pointer-events: none;
+        transition: 0.3s;
+    }
+
+    .input-box input:focus + label,
+    .input-box input:valid + label {
+        top: -8px;
+        font-size: 11px;
+        color: #00ffd5;
+    }
+
+    .input-box input:focus {
+        border-bottom: 2px solid #00ffd5;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 25px;
+        background: linear-gradient(90deg, #00ffd5, #00bfff);
+        color: black;
+        font-weight: bold;
+        cursor: pointer;
+        margin-top: 10px;
+        transition: 0.3s;
+    }
+
+    .btn:hover {
+        box-shadow: 0 0 15px #00ffd5;
+        transform: scale(1.05);
+    }
+
+    .extra {
+        margin-top: 15px;
+        font-size: 12px;
+        color: #ccc;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h2>Login</h2>
+
+    <div class="input-box">
+        <input type="text" id="user" required>
+        <label>Username</label>
+    </div>
+
+    <div class="input-box">
+        <input type="password" id="pass" required>
+        <label>Password</label>
+    </div>
+
+    <button class="btn" onclick="login()">Sign In</button>
+
+    <div class="extra">admin / admin123</div>
+</div>
+
+<script>
+function login(){
+    let u = document.getElementById("user").value;
+    let p = document.getElementById("pass").value;
+
+    if(u === "admin" && p === "admin123"){
+        alert("Login Successful!");
+    } else {
+        alert("Wrong username or password");
+    }
+}
+</script>
+
+</body>
+</html>
